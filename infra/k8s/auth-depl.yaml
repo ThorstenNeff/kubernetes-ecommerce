@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: auth
-          image: thorstenneff/auth
+          image: us.gcr.io/ticketing-dev-444518/auth
 
 ---
 apiVersion: v1
