@@ -12,6 +12,7 @@ export const errorHandler = (
             errors: err.serializeErrors() 
         });
     } else {
+        console.log(err);
         res.status(400).send({
             errors: [{message:"Unknown error"}]
         });
