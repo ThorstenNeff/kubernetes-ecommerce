@@ -18,7 +18,6 @@ router.post("/api/users/signin", [
     if (!existingUser) {
         throw new BadRequestError("Invalid credentials in use");
     } else {
-        console.log(existingUser.password);
         const passwordsMatch = await Password.compare(existingUser.password.toString(), password);
         if (!passwordsMatch) {
             throw new BadRequestError("Invalid credentials");
