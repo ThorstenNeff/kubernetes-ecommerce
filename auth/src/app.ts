@@ -16,7 +16,8 @@ app.set('trust proxy', true);
 app.use(json());
 app.use(cookieSession({
     signed: false,
-    secure: true
+    // Only set cookies in https, not http (but allow http for tests)
+    secure: process.env.NODE_ENV !== 'test'
 }));
 
 app.use(currentUserRouter);
