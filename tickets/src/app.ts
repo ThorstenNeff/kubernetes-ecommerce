@@ -2,9 +2,8 @@ import express from 'express'
 import 'express-async-errors'
 import { json } from 'body-parser'
 import cookieSession from 'cookie-session';
-
-import { errorHandler } from '@neffuke/common'
-import { NotFoundError } from '@neffuke/common'
+import { errorHandler, NotFoundError, currentUser } from '@neffuke/common'
+import { createTicketRouter  } from './routes/new';
 
 const app = express(); 
 app.set('trust proxy', true);
@@ -15,6 +14,8 @@ app.use(cookieSession({
     // Only set cookies in https, not http (but allow http for tests)
     secure: process.env.NODE_ENV !== 'test'
 }));
+app.use(createTicketRouter);
+app.use(currentUser);
 
 app.all('*', async () => {
     console.log("In not found");
