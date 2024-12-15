@@ -1,0 +1,17 @@
+{
+  "name": "@neffuke/common",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "del ./build/*",
+    "build": "npm run clean && tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "del-cli": "^6.0.0",
+    "typescript": "^5.7.2"
+  }
+}
