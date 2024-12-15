@@ -4,7 +4,7 @@ import jwt from 'jsonwebtoken';
 
 import { validateRequest } from '@neffuke/common';
 import { User } from '../models/User';
-import { BadRequestError } from '../../../common/src/errors/bad-request-error';
+import { BadRequestError } from '@neffuke/common';
 
 const router = express.Router();
 

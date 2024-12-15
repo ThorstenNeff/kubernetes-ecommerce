@@ -8,7 +8,7 @@ import { signinRouter } from './routes/signin'
 import { signoutRouter } from './routes/signout'
 import { signupRouter } from './routes/signup'
 import { errorHandler } from '@neffuke/common'
-import { NotFoundError } from '../../common/src/errors/not-found-error'
+import { NotFoundError } from '@neffuke/common'
 
 const app = express(); 
 app.set('trust proxy', true);
