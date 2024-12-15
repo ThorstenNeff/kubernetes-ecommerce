@@ -2,7 +2,7 @@ import express, { Request, Response } from 'express';
 import { body } from 'express-validator';
 import jwt from 'jsonwebtoken';
 
-import { validateRequest } from '../middlewares/validate-request';
+import { validateRequest } from '@neffuke/common';
 import { User } from '../models/User';
 import { BadRequestError } from '../../../common/src/errors/bad-request-error';
 
