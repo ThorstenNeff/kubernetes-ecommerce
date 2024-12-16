@@ -1,15 +1,17 @@
 import express, { Request, Response } from 'express';
-import { NotFoundError, requireAuth } from '@neffuke/common';
+import { NotFoundError } from '@neffuke/common';
 import { Ticket } from '../models/ticket';
 
 const router = express.Router();
 
 router.get('/api/tickets/:id', async (req: Request, res: Response) => {
-    const ticket = await Ticket.findById(req.params.id);
-    if (!ticket) {
-        throw new NotFoundError();
-    }
-    res.send(ticket);
+  const ticket = await Ticket.findById(req.params.id);
+
+  if (!ticket) {
+    throw new NotFoundError();
+  }
+
+  res.send(ticket);
 });
 
-export { router as showTicketRouter }
+export { router as showTicketRouter };
