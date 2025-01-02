@@ -9,28 +9,3 @@ build:
     push: false
   #googleCloudBuild:
   #  projectId: ticketing-dev-444518
-  artifacts:
-    - image: thorstenneff/auth
-      context: auth
-      docker: 
-        dockerfile: Dockerfile
-      sync:
-        manual: 
-          - src: 'src/**/*.ts'
-            dest: '.'
-    - image: thorstenneff/client
-      context: client
-      docker: 
-        dockerfile: Dockerfile
-      sync:
-        manual: 
-          - src: '**/*.js'
-            dest: '.'
-    - image: thorstenneff/tickets
-      context: tickets
-      docker: 
-        dockerfile: Dockerfile
-      sync:
-        manual: 
-          - src: 'src/**/*.ts'
-            dest: '.'
