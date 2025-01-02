@@ -1,6 +1,6 @@
 import nats from 'node-nats-streaming'
 
-const stan = nats.connect('ticketing', 'abc', {
+const stan = nats.connect('docker-desktop', 'abc', {
     url: 'http://localhost:4222'
 });
 
