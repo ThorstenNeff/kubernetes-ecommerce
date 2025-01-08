@@ -3,10 +3,10 @@ import 'express-async-errors'
 import { json } from 'body-parser'
 import cookieSession from 'cookie-session';
 import { errorHandler, NotFoundError, currentUser } from '@neffuke/common'
-import { createTicketRouter  } from './routes/new';
-import { showTicketRouter  } from './routes/show';
-import { indexTicketRouter } from './routes/index';
-import { updateTicketRouter } from './routes/update';
+import { deleteOrderRouter  } from './routes/delete';
+import { newOrderRouter  } from './routes/new';
+import { showOrderRouter } from './routes/show';
+import { indexOrderRouter } from './routes/index';
 
 const app = express(); 
 app.set('trust proxy', true);
@@ -18,10 +18,10 @@ app.use(cookieSession({
     secure: process.env.NODE_ENV !== 'test'
 }));
 app.use(currentUser);
-app.use(createTicketRouter);
-app.use(showTicketRouter);
-app.use(indexTicketRouter);
-app.use(updateTicketRouter);
+app.use(deleteOrderRouter);
+app.use(showOrderRouter);
+app.use(newOrderRouter);
+app.use(indexOrderRouter);
 
 app.all('*', async () => {
     console.log("In not found");
