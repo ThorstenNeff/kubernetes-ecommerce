@@ -29,7 +29,7 @@ spec:
               '2',
               '-SD',
               '-cid',
-              'docker-desktop',
+              'gke_ticketing-dev-444518_europe-west1-b_ticketing-dev',
             ]
 ---
 apiVersion: v1
