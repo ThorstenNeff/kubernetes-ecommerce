@@ -4,7 +4,7 @@ import { TicketCreatedListener } from './events/ticket-created-listener'
 
 console.clear();
 
-const stan = nats.connect('docker-desktop', randomBytes(4).toString('hex'), {
+const stan = nats.connect('gke_ticketing-dev-444518_europe-west1-b_ticketing-dev', randomBytes(4).toString('hex'), {
     url: 'http://localhost:4222'
 });
 
