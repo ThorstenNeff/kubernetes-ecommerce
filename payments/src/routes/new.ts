@@ -2,6 +2,7 @@ import express, { Request, Response } from 'express';
 import { requireAuth, validateRequest, NotFoundError, BadRequestError, NotAuthorizedError, OrderStatus } from '@neffuke/common';
 import { body } from 'express-validator';
 import { Order } from '../models/orders';
+import { stripe } from '../stripe';
 
 const router = express.Router(); 
 
@@ -20,6 +21,12 @@ router.post('api/payments', requireAuth, [
     if (order.status === OrderStatus.Cancelled) {
         throw new BadRequestError("Order already cancelled");
     }
+
+    await stripe.charges.create({
+        currency: 'usd',
+        amount: order.price * 100,
+        source: token
+    });
     
     res.send({success: true});
 });
