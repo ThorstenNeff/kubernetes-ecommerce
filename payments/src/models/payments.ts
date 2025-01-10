@@ -1,12 +1,12 @@
 import mongoose from 'mongoose';
 
 interface PaymentAttrs {
-    id: string;
+    orderId: string;
     stripeId: string;
 }
 
 interface PaymentDoc extends mongoose.Document {
-    id: string;
+    orderId: string;
     stripeId: string;
 }
 
@@ -15,6 +15,10 @@ interface PaymentModel extends mongoose.Model<PaymentDoc> {
 }
 
 const paymentSchema = new mongoose.Schema({
+    orderId: {
+        type: String,
+        required: true
+    },
     stripeId: {
         type: String,
         required: true
@@ -30,7 +34,7 @@ const paymentSchema = new mongoose.Schema({
 
 paymentSchema.statics.build = (attrs: PaymentAttrs) => {
     return new Payment({
-        _id: attrs.id,
+        orderId: attrs.orderId,
         stripeId: attrs.stripeId
     });
 };
