@@ -5,10 +5,13 @@ const LandingPage = ({ currentUser, tickets }) => {
       <tr key={ticket.id}>
         <td>{ticket.title}</td>
         <td>{ticket.price}</td>
+        <td>
+          <Link className="nav-link" href="/tickets/[ticketId]" as={`/tickets/${ticket.id}`}>View</Link>
+        </td>
       </tr>
     );
   });
-  
+
   return (
     <div>
       <h1>Tickets</h1>
@@ -17,6 +20,7 @@ const LandingPage = ({ currentUser, tickets }) => {
           <tr>
             <th>Title</th>
             <th>Price</th>
+            <th>Link</th>
           </tr>
         </thead>
         <tbody>
