@@ -1,0 +1,1 @@
+export var publishableStripeKey = "pk_test_51QfkPmRuQoz34Vpwb3cITPLw5Myv0oMqrTKJSicH5TLg1s1V1yN2P1RX3HFcvlzysYmcECspFmF1rp7FCS7wPSnq00cV0Copy5";
