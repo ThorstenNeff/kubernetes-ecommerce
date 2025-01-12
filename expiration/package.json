@@ -18,7 +18,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@neffuke/common": "^1.0.17",
+    "@neffuke/common": "^1.0.20",
     "@types/bull": "^4.10.4",
     "@types/jsonwebtoken": "^9.0.7",
     "bull": "^4.16.5",
