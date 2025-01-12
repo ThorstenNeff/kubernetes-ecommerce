@@ -1,5 +1,5 @@
 import express, { Request, Response } from 'express';
-import { NotFoundError, requireAuth } from '@neffuke/common';
+import { requireAuth } from '@neffuke/common';
 import { Order } from '../models/order';
 
 const router = express.Router(); 
