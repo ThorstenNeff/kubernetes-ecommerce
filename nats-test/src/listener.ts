@@ -9,7 +9,7 @@ const stan = nats.connect('gke_ticketing-dev-444518_europe-west1-b_ticketing-dev
 });
 
 stan.on('connect', () => {
-    console.log("Listener connected to NATS");
+    console.log("Listener connected to NATS!");
 
     stan.on('close', () => {
         console.log("NATS connection closed");
