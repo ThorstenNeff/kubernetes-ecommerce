@@ -11,11 +11,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
       - run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
         env:
-          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+          key:
+            DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+            DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
       - run: cd client && docker build -t thorstenneff/ticketing-client .
       - run: docker push thorstenneff/ticketing-client
       - uses: digitalocean/action-doctl@v2
