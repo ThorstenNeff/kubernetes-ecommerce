@@ -14,8 +14,8 @@ jobs:
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-      - run: cd payments && docker build -t thorstenneff/payments .
-      - run: docker push thorstenneff/payments
+      - run: cd payments && docker build -t tneff/payments .
+      - run: docker push tneff/payments
       - uses: digitalocean/action-doctl@v2
         with:
           token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}

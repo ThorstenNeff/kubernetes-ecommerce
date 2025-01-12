@@ -14,8 +14,8 @@ jobs:
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-      - run: cd orders && docker build -t thorstenneff/orders .
-      - run: docker push thorstenneff/orders
+      - run: cd orders && docker build -t tneff/orders .
+      - run: docker push tneff/orders
       - uses: digitalocean/action-doctl@v2
         with:
           token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
