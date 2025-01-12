@@ -12,7 +12,7 @@ app.use(json());
 app.use(cookieSession({
     signed: false,
     // Only set cookies in https, not http (but allow http for tests)
-    secure: process.env.NODE_ENV !== 'test'
+    secure: false
 }));
 app.use(currentUser);
 
